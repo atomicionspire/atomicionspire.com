@@ -3,155 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Atomic Ionspire Studios</title>
-
+  <meta name="description" content="Atomic Ionspire Studios creates bold games, interactive worlds, and future-facing digital experiences.">
+  <meta name="theme-color" content="#070707">
+  <title>Atomic Ionspire Studios | Build Beyond the Possible</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background: #070b14;
-      color: #ffffff;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    header {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
-      background:
-        radial-gradient(circle at top, #172448 0%, #070b14 55%);
-    }
-
-    .hero {
-      max-width: 850px;
-    }
-
-    h1 {
-      font-size: clamp(42px, 8vw, 80px);
-      margin-bottom: 15px;
-    }
-
-    .accent {
-      color: #6ea8ff;
-    }
-
-    .tagline {
-      font-size: 22px;
-      color: #b7c4dc;
-      margin-bottom: 35px;
-      line-height: 1.6;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 10px;
-      background: #ffffff;
-      color: #070b14;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 80px 25px;
-    }
-
-    h2 {
-      font-size: 36px;
-      margin-bottom: 25px;
-    }
-
-    p {
-      color: #b7c4dc;
-      line-height: 1.7;
-    }
-
-    .game {
-      margin-top: 30px;
-      padding: 35px;
-      border: 1px solid #273653;
-      border-radius: 18px;
-      background: #0d1423;
-    }
-
-    .game h3 {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-
-    footer {
-      border-top: 1px solid #202c42;
-      text-align: center;
-      padding: 35px 20px;
-      color: #7f8da6;
-    }
-
-    footer a {
-      color: #a9c7ff;
-      margin: 0 10px;
-    }
+    :root{--bg:#050505;--panel:#0d0d0f;--panel2:#121214;--text:#f7f7f7;--muted:#a9a9b0;--red:#ff2238;--red2:#a90018;--line:#2b0d12;--shadow:0 20px 60px rgba(0,0,0,.45)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 80% 10%,rgba(255,34,56,.12),transparent 28%),radial-gradient(circle at 10% 70%,rgba(160,0,24,.10),transparent 30%);z-index:-2}
+    .grid-bg{position:fixed;inset:0;z-index:-3;opacity:.17;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+    .wrap{width:min(1160px,calc(100% - 40px));margin:auto}.nav{position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(255,255,255,.07);background:rgba(5,5,5,.78);backdrop-filter:blur(16px)}
+    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:28px}.brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-weight:900;letter-spacing:.02em}.mark{width:42px;height:42px;filter:drop-shadow(0 0 18px rgba(255,34,56,.28))}.brand span{color:var(--red)}
+    .links{display:flex;gap:26px;align-items:center}.links a{color:#c9c9ce;text-decoration:none;font-size:14px;font-weight:700}.links a:hover{color:white}.nav-cta,.btn-primary,.btn-ghost{display:inline-flex;align-items:center;justify-content:center;border-radius:10px;text-decoration:none;font-weight:850;transition:.2s ease}.nav-cta,.btn-primary{background:linear-gradient(135deg,var(--red),#b1001c);color:#fff;box-shadow:0 10px 32px rgba(255,34,56,.2)}.nav-cta{padding:10px 16px}.nav-cta:hover,.btn-primary:hover{transform:translateY(-2px);filter:brightness(1.08)}
+    .hero{min-height:82vh;display:grid;place-items:center;padding:110px 0 88px}.hero-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:60px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:7px 11px;border:1px solid #4d131c;border-radius:999px;color:#ff7d8d;background:#17080b;font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 16px var(--red)}
+    h1{font-size:clamp(52px,7.5vw,92px);line-height:.95;letter-spacing:-.055em;margin:22px 0 24px}.stroke{color:transparent;-webkit-text-stroke:1px #6e6e74}.hero p{font-size:clamp(18px,2vw,22px);color:var(--muted);max-width:680px}.hero-actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}.btn-primary,.btn-ghost{padding:14px 20px}.btn-ghost{color:#fff;border:1px solid #2b2b30;background:#0a0a0c}.btn-ghost:hover{border-color:#5b1a23;background:#101012}
+    .hero-card{position:relative;border:1px solid #2e1116;border-radius:24px;padding:22px;background:linear-gradient(180deg,#111114,#09090b);box-shadow:var(--shadow);overflow:hidden}.hero-card:before{content:"";position:absolute;width:260px;height:260px;background:radial-gradient(circle,rgba(255,34,56,.28),transparent 66%);right:-80px;top:-100px}.screen{aspect-ratio:4/5;border-radius:16px;border:1px solid #27272c;background:linear-gradient(145deg,#16161a,#08080a);padding:20px;position:relative}.screen-top{display:flex;justify-content:space-between;color:#8f8f96;font-size:12px}.planet{width:180px;height:180px;border-radius:50%;margin:46px auto 30px;background:radial-gradient(circle at 35% 32%,#ff5366 0 8%,#a90f22 19%,#3b0710 42%,#080808 70%);box-shadow:0 0 55px rgba(255,34,56,.28),inset -18px -18px 40px #000;border:1px solid #77202d}.mini{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mini div{padding:13px;border:1px solid #2d2d31;background:#0d0d10;border-radius:10px;color:#bbb;font-size:12px}.mini strong{display:block;color:#fff;font-size:14px;margin-bottom:3px}
+    section{padding:96px 0}.section-kicker{color:var(--red);font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px}.section-title{font-size:clamp(36px,5vw,58px);letter-spacing:-.04em;line-height:1.05;max-width:760px}.section-copy{color:var(--muted);max-width:720px;margin-top:18px;font-size:18px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px}.card{background:linear-gradient(180deg,#101012,#0a0a0c);border:1px solid #252529;border-radius:18px;padding:26px;min-height:220px;box-shadow:0 14px 50px rgba(0,0,0,.2)}.card-num{color:var(--red);font-weight:900;font-size:13px;letter-spacing:.14em}.card h3{font-size:22px;margin:20px 0 10px}.card p{color:#9d9da4}
+    .game-feature{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;margin-top:42px;padding:30px;border:1px solid #3a1118;background:linear-gradient(145deg,#120b0d,#080809);border-radius:24px}.game-art{min-height:390px;border-radius:18px;background:radial-gradient(circle at 50% 45%,rgba(255,34,56,.25),transparent 24%),linear-gradient(145deg,#1a1a1f,#09090b);display:grid;place-items:center;border:1px solid #28282d;overflow:hidden;position:relative}.earth{width:240px;height:240px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ef455b 0 8%,#940e1f 18%,#25070b 44%,#080808 70%);box-shadow:0 0 85px rgba(255,34,56,.24);position:relative}.earth:after{content:"PARALLEL EARTH";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);white-space:nowrap;font-size:18px;font-weight:950;letter-spacing:.17em;text-shadow:0 2px 15px #000}.game-copy h3{font-size:36px;letter-spacing:-.03em}.game-copy p{color:var(--muted);margin:16px 0 22px}.pill-row{display:flex;flex-wrap:wrap;gap:9px}.pill{font-size:12px;font-weight:800;border:1px solid #422028;color:#ffc3ca;background:#13090b;padding:7px 10px;border-radius:999px}
+    .cta{border:1px solid #3b1219;border-radius:24px;padding:54px;background:linear-gradient(135deg,#15090c,#0a0a0c 60%);display:flex;justify-content:space-between;align-items:center;gap:30px}.cta h2{font-size:clamp(34px,5vw,54px);line-height:1}.cta p{color:var(--muted);margin-top:12px;max-width:610px}
+    footer{border-top:1px solid #1f1f23;padding:42px 0 55px;color:#8d8d94}.footer-grid{display:flex;justify-content:space-between;gap:30px;align-items:flex-start}.footer-links{display:flex;gap:18px;flex-wrap:wrap}.footer-links a{color:#b8b8be;text-decoration:none}.footer-links a:hover{color:#fff}.small{font-size:13px;margin-top:8px}
+    @media(max-width:850px){.links a:not(.nav-cta){display:none}.hero-grid,.game-feature{grid-template-columns:1fr}.hero{padding-top:70px}.cards{grid-template-columns:1fr}.hero-card{max-width:560px}.cta,.footer-grid{flex-direction:column;align-items:flex-start}}
   </style>
 </head>
-
 <body>
+<div class="grid-bg"></div>
+<nav class="nav"><div class="wrap nav-inner">
+  <a class="brand" href="#top" aria-label="Atomic Ionspire Studios home">
+    <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff4a5d"/><stop offset="1" stop-color="#a80019"/></linearGradient></defs><path fill="url(#g)" d="M32 3 57 17v30L32 61 7 47V17L32 3Zm0 9-16 9v22l16 9 16-9V21l-16-9Z"/><path fill="#fff" d="M32 17 44 39h-8l-4-8-4 8h-8l12-22Z"/></svg>
+    Atomic <span>Ionspire</span> Studios
+  </a>
+  <div class="links"><a href="#about">About</a><a href="#games">Games</a><a href="#vision">Vision</a><a class="nav-cta" href="#contact">Contact</a></div>
+</div></nav>
 
-<header>
-  <div class="hero">
-    <h1>Atomic <span class="accent">Ionspire</span> Studios</h1>
-
-    <p class="tagline">
-      Building interactive worlds, games, and digital experiences.
-    </p>
-
-    <a class="button" href="#games">Explore Our Games</a>
+<header class="hero" id="top"><div class="wrap hero-grid">
+  <div><div class="eyebrow"><span class="dot"></span> Independent game & software studio</div>
+    <h1>Build Beyond<br><span class="stroke">the Possible.</span></h1>
+    <p>Atomic Ionspire Studios creates bold interactive worlds, intelligent software, and digital experiences designed to feel like the future.</p>
+    <div class="hero-actions"><a class="btn-primary" href="#games">Explore Our Games</a><a class="btn-ghost" href="#about">Discover the Studio</a></div>
   </div>
-</header>
+  <div class="hero-card"><div class="screen"><div class="screen-top"><span>ATOMIC // IONSPIRE</span><span>ONLINE</span></div><div class="planet"></div><div class="mini"><div><strong>Parallel Earth</strong>World simulation</div><div><strong>In Development</strong>Android + iOS</div></div></div></div>
+</div></header>
 
-<section>
-  <h2>About Us</h2>
+<section id="about"><div class="wrap"><div class="section-kicker">Who we are</div><h2 class="section-title">A small studio with ambitious ideas.</h2><p class="section-copy">Atomic Ionspire Studios is an independent game and software company focused on immersive simulations, decision-driven experiences, and products that combine strong design with emerging technology.</p><div class="cards"><div class="card"><div class="card-num">01 // WORLDS</div><h3>Interactive Experiences</h3><p>We design systems where choices matter, outcomes evolve, and players can shape the experience around them.</p></div><div class="card"><div class="card-num">02 // TECHNOLOGY</div><h3>Future-Facing Software</h3><p>We explore modern tools and intelligent systems to create software that feels fast, useful, and forward-looking.</p></div><div class="card"><div class="card-num">03 // IDENTITY</div><h3>Built to Stand Out</h3><p>Bold visual direction, strong concepts, and memorable worlds are at the center of everything we build.</p></div></div></div></section>
 
-  <p>
-    Atomic Ionspire Studios is an independent software and game development
-    studio focused on creating engaging interactive experiences and
-    imaginative digital worlds.
-  </p>
-</section>
+<section id="games"><div class="wrap"><div class="section-kicker">Featured project</div><h2 class="section-title">Meet Parallel Earth.</h2><div class="game-feature"><div class="game-art"><div class="earth"></div></div><div class="game-copy"><h3>Your decisions shape the world.</h3><p>Parallel Earth is a decision-driven world simulation where players confront global crises, scientific breakthroughs, political conflict, emerging technology, and unexpected discoveries. Every choice can push Earth toward a different future.</p><div class="pill-row"><span class="pill">Simulation</span><span class="pill">Interactive Story</span><span class="pill">Strategy</span><span class="pill">Android</span><span class="pill">iOS</span></div></div></div></div></section>
 
-<section id="games">
-  <h2>Our Games</h2>
+<section id="vision"><div class="wrap"><div class="section-kicker">Our direction</div><h2 class="section-title">Games and software made for what comes next.</h2><p class="section-copy">Our goal is simple: build distinctive experiences with real identity. We are starting with Parallel Earth and growing Atomic Ionspire Studios into a home for original games and ambitious digital products.</p></div></section>
 
-  <div class="game">
-    <h3>Parallel Earth</h3>
+<section id="contact"><div class="wrap"><div class="cta"><div><div class="section-kicker">Atomic Ionspire Studios</div><h2>Build Beyond the Possible.</h2><p>Follow the studio as we prepare Parallel Earth for release and continue developing new interactive experiences.</p></div><a class="btn-primary" href="mailto:leo@atomicionspire.com">Contact the Studio</a></div></div></section>
 
-    <p>
-      Shape a world through your decisions. Parallel Earth is a life and
-      world simulation experience where choices influence the world around you.
-    </p>
-
-    <p style="margin-top: 20px;">
-      <strong>Coming soon to Android and iOS.</strong>
-    </p>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 Atomic Ionspire Studios. All rights reserved.</p>
-
-  <p style="margin-top: 15px;">
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms of Service</a>
-  </p>
-</footer>
-
+<footer><div class="wrap footer-grid"><div><div class="brand"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path fill="#ff2238" d="M32 3 57 17v30L32 61 7 47V17L32 3Zm0 9-16 9v22l16 9 16-9V21l-16-9Z"/><path fill="#fff" d="M32 17 44 39h-8l-4-8-4 8h-8l12-22Z"/></svg>Atomic <span>Ionspire</span> Studios</div><div class="small">© 2026 Atomic Ionspire Studios. All rights reserved.</div></div><div class="footer-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="https://github.com/atomicionspire" rel="noopener">GitHub</a></div></div></footer>
 </body>
 </html>
