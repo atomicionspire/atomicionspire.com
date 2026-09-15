@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><title>Ionspire layout checks</title>
+<style>
+body { font: 16px system-ui; margin: 0; background: #23232a; color: white; }
+header { position: sticky; top: 0; z-index: 99; padding: 12px; background: #35353d; display: flex; flex-wrap: wrap; gap: 12px; }
+select,button,label { font: inherit; padding: 8px; }
+iframe { border: 0; background: #050505; display: block; margin: 12px; height: 850px; }
+pre { white-space: pre-wrap; padding: 16px; }
+</style></head><body>
+<header>
+<label>Page <select id="route" aria-label="Page"></select></label>
+<label>Width <select id="width" aria-label="Width"><option>320</option><option>360</option><option selected>390</option><option>430</option><option>600</option><option>768</option><option>860</option><option>1024</option><option>1440</option></select></label>
+<label><input type="checkbox" id="scale">200% text</label>
+<button id="load">Load view</button><button id="hero">Show emblem</button><button id="bottom">Show footer</button><button id="run">Run all layout checks</button>
+<output id="status"></output>
+</header>
+<iframe id="fixture" title="Site preview"></iframe><pre id="results">Not run</pre>
+<script src="visual.js"></script>
+</body></html>

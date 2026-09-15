@@ -1,0 +1,18 @@
+# Atomic Ionspire Studios website
+
+Static website published by GitHub Pages from the main branch.
+
+## Verify changes
+
+- Run `node tests/check-site.mjs` to validate the shared navigation, release references, local links, anchors, and complete PNG data including chunk checksums.
+- Run `node tests/preview.mjs` and open `http://localhost:4173/tests/visual.html` for the responsive browser harness.
+- The harness checks all 12 pages at widths from 320 to 1440 pixels and at 200% text size. It checks page overflow, image loading, header consistency, card decoration, and mobile menu behavior, and provides controls for visual inspection.
+- The same harness can check published pages under `/tests/visual.html`. It is not linked from the product and is marked noindex.
+
+## Branding and releases
+
+All public pages use the intact `assets/ionstar-v3.png` image. The original PNG was restored separately for older links. Do not substitute images with CSS `content:url()`.
+
+Use one release version for all page, stylesheet, and script links so older cached pages are not mixed with new assets. The current release is 3.0.1.
+
+When publishing a binary through an API, verify the returned Git blob SHA against `git hash-object`. Terminal output can be truncated even when a read command exits successfully; never publish base64 without checking byte counts and hashes.

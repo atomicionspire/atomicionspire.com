@@ -1,1 +1,23 @@
-(()=>{const btn=document.querySelector('.menu-btn');const links=document.querySelector('.links');if(btn&&links){btn.addEventListener('click',()=>{links.classList.toggle('open');btn.setAttribute('aria-expanded',links.classList.contains('open')?'true':'false')});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')))}const els=[...document.querySelectorAll('.reveal')];if('IntersectionObserver'in window){const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.14});els.forEach(el=>io.observe(el))}else{els.forEach(el=>el.classList.add('show'))}const year=document.querySelector('[data-year]');if(year)year.textContent=new Date().getFullYear();})();
+/* Shared navigation works on every route, with keyboard and history support. */
+(() => {
+  const nav = document.querySelector('.nav');
+  const button = document.querySelector('.menu-btn');
+  const links = document.querySelector('#primary-links');
+  const setMenu = (open) => {
+    links?.classList.toggle('open', open);
+    button?.setAttribute('aria-expanded', String(open));
+    if (button) button.textContent = open ? 'Close' : 'Menu';
+  };
+  button?.addEventListener('click', () => setMenu(button.getAttribute('aria-expanded') !== 'true'));
+  links?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && button?.getAttribute('aria-expanded') === 'true') {
+      setMenu(false);
+      button.focus();
+    }
+  });
+  document.addEventListener('click', event => { if (!nav?.contains(event.target)) setMenu(false); });
+  window.matchMedia('(min-width: 861px)').addEventListener('change', () => setMenu(false));
+  window.addEventListener('pageshow', () => setMenu(false));
+  document.querySelectorAll('[data-year]').forEach(element => { element.textContent = String(new Date().getFullYear()); });
+})();
