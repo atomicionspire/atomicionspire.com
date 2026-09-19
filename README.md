@@ -13,6 +13,12 @@ Static website published by GitHub Pages from the main branch.
 
 All public pages use the intact `assets/ionstar-v3.png` image. The original PNG was restored separately for older links. Do not substitute images with CSS `content:url()`.
 
-Use one release version for all page, stylesheet, and script links so older cached pages are not mixed with new assets. The current release is 3.0.1.
+Use one release version for all page, stylesheet, and script links so older cached pages are not mixed with new assets. The tabbed homepage release is 4.0.0; retained detail and policy pages use 3.0.1.
 
 When publishing a binary through an API, verify the returned Git blob SHA against `git hash-object`. Terminal output can be truncated even when a read command exits successfully; never publish base64 without checking byte counts and hashes.
+
+## Approved redesign
+
+The homepage is the approved animated, tabbed design with Lockridge featured first. Its assets are `style.css`, `premium.css`, `app.js`, and `energy.js`. Existing detail and policy pages retain `styles.css` and `script.js`. The domain configuration is unchanged.
+
+The previous live site is preserved on `backup/pre-premium-redesign-2026-09-19` at commit `2df7a543da8e7d43302fd28bfa3132fa6f1177b0`.
