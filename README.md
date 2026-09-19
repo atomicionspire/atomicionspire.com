@@ -13,7 +13,7 @@ Static website published by GitHub Pages from the main branch.
 
 All public pages use the intact `assets/ionstar-v3.png` image. The original PNG was restored separately for older links. Do not substitute images with CSS `content:url()`.
 
-Use one release version for all page, stylesheet, and script links so older cached pages are not mixed with new assets. All public pages use release 4.1.0.
+Use one release version for all page, stylesheet, and script links so older cached pages are not mixed with new assets. All public pages use release 4.1.1.
 
 When publishing a binary through an API, verify the returned Git blob SHA against `git hash-object`. Terminal output can be truncated even when a read command exits successfully; never publish base64 without checking byte counts and hashes.
 

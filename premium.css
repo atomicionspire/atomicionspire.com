@@ -8,3 +8,7 @@
 @media(prefers-reduced-motion:reduce){.title-line:nth-child(2){background-position:center}.hero-emblem{transform:none!important}}
 
 .project-detail[data-project=lockridge]{background:linear-gradient(140deg,#521b1cdd,#0c0c12ed)}.project-detail[data-project=lockridge] .project-monogram{color:#ff392768;letter-spacing:-.025em}.project-status{display:inline-block;border:1px solid #ff382855;background:#ff281015;color:#ff9382;padding:9px 13px;font-size:14px;margin-top:10px}.project-list button{padding-top:20px;padding-bottom:20px}@media(max-width:760px){.project-list button{padding-top:14px;padding-bottom:14px}}
+
+/* Scroll containers can receive native browser focus after touch scrolling. */
+#main:focus,.panel:focus,.detail-screen:focus{outline:none}
+body[data-input="keyboard"] #main:focus-visible,body[data-input="keyboard"] .panel:focus-visible,body[data-input="keyboard"] .detail-screen:focus-visible{outline:2px solid #ff4930;outline-offset:-3px}
