@@ -11,22 +11,21 @@ let links = 0;
 for(const page of pages) {
   const text = readFileSync(resolve(root,page),'utf8');
   assert.equal((text.match(/<nav /g)||[]).length,1,page+' shared navigation');
+  assert(text.includes('data-site-version="4.1.0"'), page+' current release');
+  for(const asset of ['style.css','premium.css','energy.js']) assert(text.includes(asset+'?v=4.1.0'),page+' current asset '+asset);
+  assert(text.includes('assets/ionstar-v3.png'),page+' shared intact logo');
+  assert(!text.includes('styles.css?v=3.0.1'),page+' no legacy stylesheet');
   if(page==='index.html') {
-    assert(text.includes('data-site-version="4.0.0"'), 'homepage release');
-    for(const asset of ['style.css','premium.css','app.js','energy.js']) assert(text.includes(asset+'?v=4.0.0'),'versioned homepage asset '+asset);
-    for(const tab of ['home','projects','eve','os','about','contact']) {
-      assert(text.includes('aria-controls="'+tab+'"'),'tab control '+tab);
-      assert(text.includes('id="'+tab+'"'),'tab panel '+tab);
-    }
-    assert(text.includes('data-project="lockridge"'),'Lockridge project');
-    assert(text.includes('assets/ionstar-v3.png'),'intact logo');
+    assert(text.includes('app.js?v=4.1.0'),'homepage behavior');
+    assert(text.includes('data-project="lockridge"'),'Lockridge');
   } else {
-  assert.equal((text.match(/class="brand-mark"/g)||[]).length,2,page+' shared branding');
-  assert(text.includes('aria-controls="primary-links"'), page+' accessible menu');
-  assert(text.includes('styles.css?v='+version), page+' versioned CSS');
-  assert(text.includes('script.js?v='+version), page+' versioned JS');
-  assert(text.includes('data-site-version="'+version+'"'),page+' version');
+    assert(text.includes('details.js?v=4.1.0'),page+' detail behavior');
+    assert(text.includes('details.css?v=4.1.0'),page+' detail styling');
+    assert(text.includes('class="detail-tabs"'),page+' content tabs');
   }
+  const ids=[...text.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
+  assert.equal(new Set(ids).size,ids.length,page+' unique IDs');
+  for(const m of text.matchAll(/aria-controls="([^"]+)"/g)) assert(ids.includes(m[1]),page+' valid tab target');
   assert(!text.includes('atomic-ionspire-mark'),page+' old logo reference');
   assert.equal((text.match(/<h1[ >]/g)||[]).length,1,page+' single heading');
   for(const match of text.matchAll(/(?:href|src)="([^"]+)"/g)) {
