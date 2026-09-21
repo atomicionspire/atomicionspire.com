@@ -1,24 +1,64 @@
 # Atomic Ionspire Studios website
 
-Static website published by GitHub Pages from the main branch.
+Static production website published by GitHub Pages.
+
+## V3 premium redesign
+
+The V3 redesign uses a shared graphite/crimson visual system across every public page, including the dedicated Lockridge detail page. The production brand mark is the triangular Atomic Ionspire A with integrated binary data:
+
+- `assets/atomic-ionspire-binary.svg` — animated hero identity
+- `assets/atomic-ionspire-binary-static.svg` — static header/footer/favicon identity
+
+Active release assets use version `5.0.0`.
+
+The site remains framework-free HTML, CSS, and JavaScript for predictable GitHub Pages deployment and low runtime overhead.
+
+## Motion and accessibility
+
+Motion is progressive enhancement. The site supports:
+
+- `prefers-reduced-motion: reduce`
+- a persistent Motion on/off control
+- keyboard-visible focus
+- a skip link
+- touch-specific navigation behavior
+- paused ambient animation while the document is hidden
+
+Continuous ambient drawing uses `requestAnimationFrame`.
 
 ## Verify changes
 
-- Run `node tests/check-site.mjs` to validate the shared navigation, release references, local links, anchors, and complete PNG data including chunk checksums.
-- Run `node tests/preview.mjs` and open `http://localhost:4173/tests/visual.html` for the responsive browser harness.
-- The harness checks all 12 pages at widths from 320 to 1440 pixels and at 200% text size. It checks page overflow, image loading, header consistency, card decoration, and mobile menu behavior, and provides controls for visual inspection.
-- The same harness can check published pages under `/tests/visual.html`. It is not linked from the product and is marked noindex.
+Run:
 
-## Branding and releases
+```bash
+node tests/check-site.mjs
+node tests/preview.mjs
+```
 
-All public pages use the intact `assets/ionstar-v3.png` image. The original PNG was restored separately for older links. Do not substitute images with CSS `content:url()`.
+Then open `http://127.0.0.1:4173/tests/visual.html`.
 
-Use one release version for all page, stylesheet, and script links so older cached pages are not mixed with new assets. All public pages use release 4.1.2.
+The V3 harness covers all 13 public pages at 320, 360, 390, 412, 768, 1024, and 1440 pixels, plus a 390px / 200% text-size pass. It checks page overflow, shared branding, images, headings, and mobile menu behavior.
 
-When publishing a binary through an API, verify the returned Git blob SHA against `git hash-object`. Terminal output can be truncated even when a read command exits successfully; never publish base64 without checking byte counts and hashes.
+## Public page inventory
 
-## Approved redesign
+- `index.html`
+- `projects.html`
+- `games.html`
+- `eve.html`
+- `ionspire-os.html`
+- `parallel-earth.html`
+- `president-simulator.html`
+- `ai-dungeon-master.html`
+- `lockridge.html`
+- `about.html`
+- `contact.html`
+- `privacy.html`
+- `terms.html`
 
-The homepage is the approved animated, tabbed design with Lockridge featured first. Its assets are `style.css`, `premium.css`, `app.js`, and `energy.js`. All detail and policy pages share `style.css`, `premium.css`, and `energy.js`, with `details.css` and `details.js` providing section tabs and detail layouts. Internal navigation stays in the same browser tab. The unused legacy assets remain only for recoverability. The domain configuration is unchanged.
+## Deployment safeguards
 
-The previous live site is preserved on `backup/pre-premium-redesign-2026-09-19` at commit `2df7a543da8e7d43302fd28bfa3132fa6f1177b0`.
+- Preserve `CNAME`.
+- Keep one release version across active HTML/CSS/JS references.
+- Run structural and responsive checks before merging.
+- Do not treat a homepage-only visual pass as a completed redesign.
+- The prior live site remains available in repository history and the existing backup branch.
