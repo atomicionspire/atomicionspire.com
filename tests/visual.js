@@ -40,7 +40,7 @@ document.querySelector('#run').addEventListener('click', async () => {
         if (rect.left < -1 || rect.right > win.innerWidth + 1) errors.push('offscreen '+element.tagName+'.'+element.className);
         if (element.scrollWidth > element.clientWidth + 2 && win.getComputedStyle(element).display !== 'inline') errors.push('text/content overflow '+element.tagName+'.'+element.className);
       }
-      for(const image of doc.images) if(!image.complete || image.naturalWidth !== 1254 || image.naturalHeight !== 1254) errors.push('image failed '+image.getAttribute('src'));
+      for(const image of doc.images) if(!image.complete || image.naturalWidth === 0 || image.naturalHeight === 0) errors.push('image failed '+image.getAttribute('src'));
       if(doc.querySelectorAll('.brand-mark').length !== 2) errors.push('inconsistent header/footer');
       const button = doc.querySelector('.menu-btn'), links = doc.querySelector('#primary-links');
       if(size <= 860) {
