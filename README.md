@@ -11,7 +11,7 @@ Static website published by GitHub Pages from the main branch.
 
 ## Branding and releases
 
-All public pages use the intact `assets/ionstar-v3.png` image. The original PNG was restored separately for older links. Do not substitute images with CSS `content:url()`.
+All public pages use the Ionspire master mark at `assets/ion-spire-v1.svg`. The legacy atom/star assets remain in the repository for recoverability. Do not substitute images with CSS `content:url()`.
 
 Use one release version for all page, stylesheet, and script links so older cached pages are not mixed with new assets. All public pages use release 4.1.2.
 

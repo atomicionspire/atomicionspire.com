@@ -13,7 +13,7 @@ for(const page of pages) {
   assert.equal((text.match(/<nav /g)||[]).length,1,page+' shared navigation');
   assert(text.includes('data-site-version="4.1.2"'), page+' current release');
   for(const asset of ['style.css','premium.css','energy.js']) assert(text.includes(asset+'?v=4.1.2'),page+' current asset '+asset);
-  assert(text.includes('assets/ionstar-v3.png'),page+' shared intact logo');
+  assert(text.includes('assets/ion-spire-v1.svg'),page+' shared Ionspire logo');
   assert(!text.includes('styles.css?v=3.0.1'),page+' no legacy stylesheet');
   if(page==='index.html') {
     assert(text.includes('app.js?v=4.1.2'),'homepage behavior');
